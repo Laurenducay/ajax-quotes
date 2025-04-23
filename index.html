@@ -16,7 +16,7 @@
 
     xhr.open('GET', 'random_quotes.php', true);
     
-    xhr.onload = functon(){
+    xhr.onload = function(){
       //code to run on return of data
       if(xhr.status==200){ //data is good, show it
         alert(xhr.responseText);
@@ -25,7 +25,7 @@
       }
     };
 
-    xhr.onerror = functon(){
+    xhr.onerror = function(){
       //code to run on error
       alert("Error")
     };
