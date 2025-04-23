@@ -7,6 +7,7 @@
 <body>
   <h1>AJAX Quotes</h1>
  <button onclick="getRandomQuote()">Get Random Quote</button>
+ <div id="quote-container">Quote goes here</div>
 
 <script>
   function getRandomQuote() {
@@ -19,7 +20,7 @@
     xhr.onload = function(){
       //code to run on return of data
       if(xhr.status==200){ //data is good, show it
-        alert(xhr.responseText);
+        document.querySelector("#quote-container").innerText = xhr.responseText;
       } else { //not good?
         alert("No good data returned");
       }
