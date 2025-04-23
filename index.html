@@ -10,8 +10,29 @@
 
 <script>
   function getRandomQuote() {
-    alert("Can you see this?");
-  }
+    // alert("Can you see this?");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'random_quotes.php', true);
+    
+    xhr.onload = functon(){
+      //code to run on return of data
+      if(xhr.status==200){ //data is good, show it
+        alert(xhr.responseText);
+      } else { //not good?
+        alert("No good data returned");
+      }
+    };
+
+    xhr.onerror = functon(){
+      //code to run on error
+      alert("Error")
+    };
+
+    xhr.send();
+
+  };
 </script>
 </body>
 </html>
